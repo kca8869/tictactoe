@@ -197,9 +197,11 @@ function miniMax(chip) {
     }
   }
 
-  //shortcut--if the ai goes first the postion is just givin rather than force it to caculate
+  //shortcut--if the ai goes first, start the postion in a corner rather than  force it to caculate
   if (array.length==9) {
-    return {index:0};
+    var arr=[0,2,6,8]
+    var randomI=Math.floor(Math.random()*arr.length);
+    return {index:arr[randomI]};
   }
 //  console.log(chip, playerChip);
   for (var i = 0; i < array.length; i++) {
